@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">Github</string>
+  <string name="action_settings">Settings</string>
+
+  <string name="nav_trending">Trending</string>
+  <string name="nav_search">Search</string>
+
+  <string name="trending_title">Trending&#160;</string>
+
+  <string name="empty_message">
+    There doesn\'t seem to be\nanything trending in this timespan.
+  </string>
+  <string name="sign_in">Sign in</string>
+
+</resources>

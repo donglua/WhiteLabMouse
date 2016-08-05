@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
+
+android {
+  compileSdkVersion 24
+  buildToolsVersion "24.0.0"
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+  dataBinding {
+    enabled true
+  }
+  sourceSets {
+    main.java.srcDirs += 'src/main/kotlin'
+  }
+  defaultConfig {
+    applicationId "org.droiders.github"
+    minSdkVersion 15
+    targetSdkVersion 22
+    versionCode 1
+    versionName "1.0"
+    vectorDrawables.useSupportLibrary = true
+  }
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles 'proguard-rules.pro'
+    }
+  }
+}
+
+kapt {
+  generateStubs = true
+}
+
+dependencies {
+  def dependencies = rootProject.ext.dependencies
+
+  testCompile 'junit:junit:4.12'
+
+  // support
+  compile dependencies.supportAppCompat
+  compile dependencies.supportDesign
+  compile dependencies.supportRecyclerview
+  compile dependencies.supportGridlayout
+  compile dependencies.supportAnnotations
+  compile dependencies.supportCardView
+
+  // http
+  compile dependencies.retrofit
+  compile dependencies.retrofitGsonConverter
+  compile dependencies.retrofitRxjavaAdapter
+  compile dependencies.okhttp3
+  compile dependencies.okhttpLoggingInterceptor
+
+  // Rx
+  compile dependencies.rxJava
+  compile dependencies.rxAndroid
+  compile dependencies.rxBinding
+  compile dependencies.rxPreferences
+
+  // dagger
+  compile dependencies.dagger
+  // apt dependencies.daggerCompiler
+  kapt dependencies.daggerCompiler
+  provided dependencies.javaxAnnotation
+
+  kapt dependencies.databindingCompiler
+}

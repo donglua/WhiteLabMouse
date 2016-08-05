@@ -1,0 +1,52 @@
+ext {
+
+  supportLibVersion = "24.1.0"
+  retrofitLibVersion = "2.1.0"
+  okhttpLibVersion = "3.4.1"
+  daggerLibVersion = "2.2"
+  rxjavaLibVersion = "1.1.7"
+  rxAndroidVersion = "1.2.0"
+  gsonLibVersion = "2.6.2"
+  rxBindingVersion = "0.4.0"
+  superRecyclerViewVersion = "1.1.4"
+  databindingLibVersion = "2.1.2"
+
+  dependencies = [
+      // Dagger2
+      daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerLibVersion",
+      dagger                  : "com.google.dagger:dagger:$daggerLibVersion",
+      javaxAnnotation         : 'org.glassfish:javax.annotation:10.0-b28',
+
+      // Rx
+      rxJava                  : "io.reactivex:rxjava:$rxjavaLibVersion",
+      rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
+      rxBinding               : "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion",
+      rxPreferences           : "com.f2prateek.rx.preferences:rx-preferences:1.0.0",
+      // json
+      gson                    : "com.google.code.gson:gson:$gsonLibVersion",
+      // Http
+      retrofit                : "com.squareup.retrofit2:retrofit:$retrofitLibVersion",
+      retrofitGsonConverter   : "com.squareup.retrofit2:converter-gson:$retrofitLibVersion",
+      retrofitRxjavaAdapter   : "com.squareup.retrofit2:adapter-rxjava:$retrofitLibVersion",
+      okhttp3                 : "com.squareup.okhttp3:okhttp:$okhttpLibVersion",
+      okhttpLoggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$okhttpLibVersion",
+      // support
+      supportAppCompat        : "com.android.support:appcompat-v7:$supportLibVersion",
+      supportDesign           : "com.android.support:design:$supportLibVersion",
+      supportRecyclerview     : "com.android.support:recyclerview-v7:$supportLibVersion",
+      supportGridlayout       : "com.android.support:gridlayout-v7:$supportLibVersion",
+      supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
+      supportCardView         : "com.android.support:cardview-v7:$supportLibVersion",
+
+      // data binding
+      databindingCompiler     : "com.android.databinding:compiler:$databindingLibVersion",
+
+      superRecyclerView       : "com.malinskiy:superrecyclerview:$superRecyclerViewVersion",
+
+      timber                  : "com.jakewharton.timber:timber:4.1.0",
+      byteUnits               : "com.jakewharton.byteunits:byteunits:0.9.1",
+      threetenabp             : 'com.jakewharton.threetenabp:threetenabp:1.0.2',
+      appmsg                  : 'com.github.johnkil.android-appmsg:appmsg:1.2.0'
+
+  ]
+}
