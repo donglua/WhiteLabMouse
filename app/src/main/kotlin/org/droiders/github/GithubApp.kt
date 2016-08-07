@@ -1,12 +1,11 @@
 package org.droiders.github
 
-import android.app.Application
-import org.droiders.github.data.bean.User
+import android.support.multidex.MultiDexApplication
 
 /**
  * Created by Donglua on 16/8/3.
  */
-class GithubApp : Application() {
+class GithubApp : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()

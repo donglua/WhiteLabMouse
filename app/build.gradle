@@ -22,6 +22,7 @@ android {
     targetSdkVersion 22
     versionCode 1
     versionName "1.0"
+    multiDexEnabled true
     vectorDrawables.useSupportLibrary = true
   }
   buildTypes {
@@ -69,4 +70,13 @@ dependencies {
   provided dependencies.javaxAnnotation
 
   kapt dependencies.databindingCompiler
+
+  compile dependencies.superRecyclerView
+  compile dependencies.circleImageView
+
+  compile dependencies.glide
+
+  // Kotlin
+  compile dependencies.kotlinStdlib
+  compile dependencies.kotlinReflect
 }
