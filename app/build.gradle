@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'me.tatarka.retrolambda'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'kotlin-android'
 
@@ -8,10 +7,6 @@ android {
   compileSdkVersion 24
   buildToolsVersion "24.0.0"
 
-  compileOptions {
-    sourceCompatibility JavaVersion.VERSION_1_8
-    targetCompatibility JavaVersion.VERSION_1_8
-  }
   dexOptions {
     javaMaxHeapSize "4g"
   }
