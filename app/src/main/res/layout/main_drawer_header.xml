@@ -11,7 +11,7 @@
   <RelativeLayout
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:gravity="center">
+      >
 
     <org.droiders.github.ui.widget.AspectRatioImageView
         android:background="@color/colorPrimary"
