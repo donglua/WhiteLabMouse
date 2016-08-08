@@ -20,6 +20,7 @@ class TrendingFragment : BaseFragment() {
 
 
 
+
         return view.root
     }
 

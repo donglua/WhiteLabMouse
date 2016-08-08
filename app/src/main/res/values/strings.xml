@@ -11,5 +11,7 @@
     There doesn\'t seem to be\nanything trending in this timespan.
   </string>
   <string name="sign_in">Sign in</string>
+  <string name="navigation_drawer_open">open drawer</string>
+  <string name="navigation_drawer_close">close drawer</string>
 
 </resources>

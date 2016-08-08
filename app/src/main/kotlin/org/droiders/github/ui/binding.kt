@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import org.droiders.github.R
 
 /**
+ * 自定义DataBinding属性
  * Created by Donglua on 16/8/7.
  */
 @BindingAdapter("imageUrl")
