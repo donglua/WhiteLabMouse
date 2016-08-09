@@ -61,6 +61,7 @@ dependencies {
   compile dependencies.rxJava
   compile dependencies.rxAndroid
   compile dependencies.rxBinding
+  compile dependencies.rxBindingDesign
   compile dependencies.rxPreferences
 
   // dagger
@@ -75,6 +76,7 @@ dependencies {
   compile dependencies.circleImageView
 
   compile dependencies.glide
+  compile dependencies.timber
 
   // Kotlin
   compile dependencies.kotlinStdlib

@@ -22,6 +22,7 @@ ext {
       rxJava                  : "io.reactivex:rxjava:$rxjavaLibVersion",
       rxAndroid               : "io.reactivex:rxandroid:$rxAndroidVersion",
       rxBinding               : "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion",
+      rxBindingDesign         : "com.jakewharton.rxbinding:rxbinding-design:$rxBindingVersion",
       rxPreferences           : "com.f2prateek.rx.preferences:rx-preferences:1.0.0",
       // json
       gson                    : "com.google.code.gson:gson:$gsonLibVersion",
