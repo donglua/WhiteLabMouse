@@ -1,5 +1,6 @@
 package org.droiders.github.ui
 
+import android.content.res.Configuration
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v4.view.GravityCompat
@@ -11,9 +12,9 @@ import org.droiders.github.databinding.MainDrawerHeaderBinding
 import org.droiders.github.ui.fragment.SearchFragment
 import org.droiders.github.ui.fragment.TrendingFragment
 import rx.android.schedulers.AndroidSchedulers
-import timber.log.Timber
 
 class MainActivity : BaseActivity() {
+    var drawerToggle: ActionBarDrawerToggle? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,11 +26,10 @@ class MainActivity : BaseActivity() {
         mainBinding.mainNavigation.addHeaderView(headerBinding.root)
         setSupportActionBar(mainBinding.toolbar)
 
-        val drawerToggle: ActionBarDrawerToggle =
+        drawerToggle =
                 ActionBarDrawerToggle(this, mainBinding.mainDrawerLayout, mainBinding.toolbar,
                         R.string.navigation_drawer_open, R.string.navigation_drawer_close)
-        mainBinding.mainDrawerLayout.addDrawerListener(drawerToggle)
-        drawerToggle.syncState()
+        mainBinding.mainDrawerLayout.addDrawerListener(drawerToggle!!)
 
         supportFragmentManager.beginTransaction().add(R.id.main_content, TrendingFragment()).commit()
         RxNavigationView.itemSelections(mainBinding.mainNavigation)
@@ -46,5 +46,14 @@ class MainActivity : BaseActivity() {
                 })
     }
 
+    override fun onPostCreate(savedInstanceState: Bundle?) {
+        super.onPostCreate(savedInstanceState)
+        drawerToggle?.syncState()
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
+        drawerToggle?.onConfigurationChanged(newConfig)
+    }
 
 }
