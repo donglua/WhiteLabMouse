@@ -54,6 +54,5 @@ ext {
 
       kotlinStdlib            : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
       kotlinReflect           : "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-
   ]
 }
