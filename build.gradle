@@ -1,4 +1,4 @@
-apply from: 'https://raw.githubusercontent.com/donglua/AndroidDependencies/master/dependencies.gradle'
+apply from: 'buildsystem/dependencies.gradle'
 
 buildscript {
   ext.kotlin_version = '1.0.3'
@@ -7,7 +7,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:2.1.2'
+    classpath 'com.android.tools.build:gradle:2.2.0-beta1'
 
     classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
 
