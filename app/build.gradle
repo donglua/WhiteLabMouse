@@ -48,6 +48,10 @@ dependencies {
   compile dependencies.supportGridlayout
   compile dependencies.supportAnnotations
   compile dependencies.supportCardView
+  compile dependencies.supportCompat
+  compile dependencies.supportCoreUtils
+  compile dependencies.supportCoreUi
+  compile dependencies.supportFragment
 
   // http
   compile dependencies.retrofit

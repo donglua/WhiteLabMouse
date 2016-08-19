@@ -1,6 +1,6 @@
 ext {
 
-  supportLibVersion = "24.1.0"
+  supportLibVersion = "24.2.0"
   retrofitLibVersion = "2.1.0"
   okhttpLibVersion = "3.4.1"
   daggerLibVersion = "2.2"
@@ -39,6 +39,10 @@ ext {
       supportGridlayout       : "com.android.support:gridlayout-v7:$supportLibVersion",
       supportAnnotations      : "com.android.support:support-annotations:$supportLibVersion",
       supportCardView         : "com.android.support:cardview-v7:$supportLibVersion",
+      supportCompat           : "com.android.support:support-compat:$supportLibVersion",
+      supportCoreUtils        : "com.android.support:support-core-utils:$supportLibVersion",
+      supportCoreUi           : "com.android.support:support-core-ui:$supportLibVersion",
+      supportFragment         : "com.android.support:support-fragment:$supportLibVersion",
 
       // data binding
       databindingCompiler     : "com.android.databinding:compiler:$databindingLibVersion",

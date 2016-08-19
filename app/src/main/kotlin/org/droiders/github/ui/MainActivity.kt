@@ -3,6 +3,7 @@ package org.droiders.github.ui
 import android.content.res.Configuration
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import com.jakewharton.rxbinding.support.design.widget.RxNavigationView
@@ -31,18 +32,22 @@ class MainActivity : BaseActivity() {
                         R.string.navigation_drawer_open, R.string.navigation_drawer_close)
         mainBinding.mainDrawerLayout.addDrawerListener(drawerToggle!!)
 
-        supportFragmentManager.beginTransaction().add(R.id.main_content, TrendingFragment()).commit()
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                    .add(R.id.main_content, TrendingFragment(), TrendingFragment::class.simpleName)
+                    .commitNow()
+        }
         RxNavigationView.itemSelections(mainBinding.mainNavigation)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     mainBinding.mainDrawerLayout.closeDrawer(GravityCompat.START)
-                    val fragment: NavBaseFragment
+                    val fragment: Fragment
                     when (it.itemId) {
                         R.id.nav_trending -> fragment = TrendingFragment()
                         R.id.nav_search -> fragment = SearchFragment()
                         else -> fragment = TrendingFragment()
                     }
-                    supportFragmentManager.beginTransaction().replace(R.id.main_content, fragment).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.main_content, fragment).commitNow()
                 })
     }
 
