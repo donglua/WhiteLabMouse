@@ -24,12 +24,11 @@ android {
     multiDexEnabled true
     vectorDrawables.useSupportLibrary = true
 
-
     Properties properties = new Properties()
     properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    def client_id         = properties.getProperty('client_id', "")
-    def client_secret     = properties.getProperty('client_secret', "")
-    def auth_callback_url = properties.getProperty('auth_callback_url', "")
+    def client_id         = properties.getProperty('client_id', '""')
+    def client_secret     = properties.getProperty('client_secret', '""')
+    def auth_callback_url = properties.getProperty('github_callback_url', '""')
     buildConfigField "String", "CLIENT_ID",         client_id
     buildConfigField "String", "CLIENT_SECRET",     client_secret
     buildConfigField "String", "GITHUB_CALLBACK_URL", auth_callback_url
