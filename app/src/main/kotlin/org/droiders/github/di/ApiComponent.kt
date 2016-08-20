@@ -1,7 +1,6 @@
 package org.droiders.github.di
 
 import dagger.Component
-import org.droiders.github.ui.MainActivity
 import javax.inject.Singleton
 
 /**
@@ -10,5 +9,5 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(AppModule::class, RetrofitModule::class))
 interface ApiComponent {
-    fun inject(mainActivity: MainActivity)
+//    fun inject(mainActivity: MainActivity)
 }

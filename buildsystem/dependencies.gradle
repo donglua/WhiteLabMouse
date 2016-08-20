@@ -13,6 +13,10 @@ ext {
   kotlinVersion = "1.0.3"
 
   dependencies = [
+
+      // Test
+      junit4                  : "junit:junit:4.12",
+
       // Dagger2
       daggerCompiler          : "com.google.dagger:dagger-compiler:$daggerLibVersion",
       dagger                  : "com.google.dagger:dagger:$daggerLibVersion",

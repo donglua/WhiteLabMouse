@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 
 android {
   compileSdkVersion 24
-  buildToolsVersion "24.0.0"
+  buildToolsVersion "24.0.1"
 
   dexOptions {
     javaMaxHeapSize "4g"
@@ -23,6 +23,17 @@ android {
     versionName "1.0"
     multiDexEnabled true
     vectorDrawables.useSupportLibrary = true
+
+
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    def client_id         = properties.getProperty('client_id', "")
+    def client_secret     = properties.getProperty('client_secret', "")
+    def auth_callback_url = properties.getProperty('auth_callback_url', "")
+    buildConfigField "String", "CLIENT_ID",         client_id
+    buildConfigField "String", "CLIENT_SECRET",     client_secret
+    buildConfigField "String", "GITHUB_CALLBACK_URL", auth_callback_url
+
   }
   buildTypes {
     release {
@@ -39,7 +50,7 @@ kapt {
 dependencies {
   def dependencies = rootProject.ext.dependencies
 
-  testCompile 'junit:junit:4.12'
+  testCompile dependencies.junit4
 
   // support
   compile dependencies.supportAppCompat
@@ -84,4 +95,6 @@ dependencies {
   // Kotlin
   compile dependencies.kotlinStdlib
   compile dependencies.kotlinReflect
+
+  compile dependencies.threetenabp
 }
