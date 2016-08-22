@@ -17,6 +17,7 @@ import org.droiders.github.di.DaggerOauthComponent
 import org.droiders.github.ui.fragment.SearchFragment
 import org.droiders.github.ui.fragment.TrendingFragment
 import rx.android.schedulers.AndroidSchedulers.mainThread
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
@@ -61,6 +62,7 @@ class MainActivity : BaseActivity() {
                         .commitNow()
                 })
         RxView.clicks(headerBinding.buttonSignIn)
+            .debounce(300, TimeUnit.MILLISECONDS)
             .observeOn(mainThread())
             .subscribe({ startActivity(oauthManager.createLoginIntent())})
     }
